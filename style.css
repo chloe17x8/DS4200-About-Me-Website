@@ -1,0 +1,85 @@
+:root {
+  --bg: #305b21;
+  --card: #0b1224;
+  --text: #e6edf7;  
+  --muted: #a5b4fc;    
+
+  --border: rgba(255,255,255,0.15);
+  --link: #9ec1ff;
+  --link-hover: #ffffff;
+  --button: #10b981;
+  --button-hover: #059669;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* header + nav (matches your HTML classes) */
+.site-header { border-bottom: 1px solid var(--border); background: var(--card); }
+.nav {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 6px 8px;
+  opacity: 0.9;
+}
+.nav a:hover { opacity: 1; }
+.nav a.active { border-bottom: 2px solid var(--brand); }
+.nav .brand { font-weight: 700; }
+
+/* layout + headings */
+.container { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+h1 { font-size: 28px; margin: 12px 0; }
+h2 { font-size: 22px; margin: 12px 0; }
+h3 { font-size: 18px; margin: 10px 0; }
+
+/* cards used by sections */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+/* contact section list */
+.contact .contact-list { list-style: none; padding: 0; margin: 8px 0 0; }
+.contact .contact-list li { margin: 4px 0; }
+
+/* links + buttons */
+a { color: var(--link); }
+a:hover { color: var(--link-hover); }
+
+.button {
+  display: inline-block;
+  background: var(--button);
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+.button:hover { background: var(--button-hover); }
+
+/* image inside your hero-media figure */
+.hero-media img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 12px 0;
+}
+.hero-media figcaption { color: var(--muted); font-size: 13px; }
