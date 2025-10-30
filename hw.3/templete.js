@@ -57,7 +57,7 @@ socialMedia.then(function(data) {
     
   svg.append("text")
     .attr("x", width / 2)
-    .attr("y", height + 30)     // a bit below the x-axis
+    .attr("y", height + 30) 
     .attr("text-anchor", "middle")
     .text("Age Group");
 
@@ -66,7 +66,7 @@ socialMedia.then(function(data) {
   svg.append("text")
     .attr("transform", "rotate(-90)")
     .attr("x", -height / 2)
-    .attr("y", -45)             // a bit left of the y-axis
+    .attr("y", -45)       
     .attr("text-anchor", "middle")
     .text("Number of Likes");
     
@@ -141,15 +141,12 @@ socialMediaAvg.then(data => {
     .range([0, width])
     .paddingInner(0.2);
 
-    // Scale x0 is for the platform, which divide the whole scale into 4 parts
 
   const postTypes = [...new Set(data.map(d => d.PostType))];
   const x1 = d3.scaleBand()
     .domain(postTypes)
     .range([0, x0.bandwidth()])
     .padding(0.15);
-
-    // Scale x1 is for the post type, which divide each bandwidth of the previous x0 scale into three part for each post type
   
   const y = d3.scaleLinear()
   .domain([0, d3.max(data, d => +d.AvgLikes)])  // force numeric
@@ -262,12 +259,12 @@ socialMediaTime.then(data => {
     .range([0, width]);
 
   const y = d3.scaleLinear()
-    .domain([0, d3.max(data, d => d.AvgLikes)]) // or [0, 1000]
+    .domain([0, d3.max(data, d => d.AvgLikes)])
     .nice()
     .range([height, 0]);
 
 
-    // Draw the axis, you can rotate the text in the x-axis here
+    // Draw the axis
   svg.append("g")
     .attr("transform", `translate(0,${height})`)
     .call(d3.axisBottom(x).ticks(data.length))
@@ -299,7 +296,7 @@ socialMediaTime.then(data => {
   const line = d3.line()
     .x(d => x(d.Date))
     .y(d => y(d.AvgLikes))
-    .curve(d3.curveNatural); // <-- as required
+    .curve(d3.curveNatural);
 
   svg.append("path")
     .datum(data.sort((a, b) => a.Date - b.Date))
@@ -308,3 +305,4 @@ socialMediaTime.then(data => {
     .attr("stroke-width", 2)
     .attr("d", line);
 });
+
