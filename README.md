@@ -1,2 +1,2 @@
 part 1: style.css, index.html, index_2.html
-Part 2: 
+Part 2: templete.js, template.html
