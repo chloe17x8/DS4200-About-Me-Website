@@ -1,2 +1,2 @@
-HW3 folder has files for the visulizations portion. Part 2.1 - 2.3
-the rest of the files are for the website
+part 1: style.css, index.html, index_2.html
+Part 2: 
